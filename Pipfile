@@ -8,6 +8,11 @@ pandas = "*"
 black = "*"
 fsspec = "*"
 gcsfs = "*"
+sklearn = "*"
+xgboost = "==1.4.2"
+seaborn = "*"
+graphviz = "*"
+treeplot = "*"
 
 [dev-packages]
 
