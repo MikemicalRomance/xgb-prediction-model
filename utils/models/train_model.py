@@ -1,5 +1,5 @@
 from sklearn.model_selection import train_test_split
-
+import xgboost as xgb
 
 def train_test_valid_split(
     dataframe, target_variable, train_size, test_size_remaining_data
@@ -17,9 +17,10 @@ def train_test_valid_split(
     return X_train, y_train, X_test, y_test, X_valid, y_valid
 
 
-def train_model(
-    model, training_data, validation_data, early_stopping_rounds, eval_metric
+def train_xgb_classifier(
+    training_data, validation_data, early_stopping_rounds, eval_metric
 ):
+    model = xgb.XGBClassifier(use_label_encoder=False)
     trained_model = model.fit(
         training_data["X_train"],
         training_data["y_train"],
@@ -28,15 +29,3 @@ def train_model(
         eval_set=[(validation_data["X_valid"], validation_data["y_valid"])],
     )
     return trained_model
-
-
-# xgb_cl = xgb.XGBClassifier()
-# eval_set = [(X_valid, y_valid)]
-# model = xgb_cl.fit(
-#    X_train,
-#    y_train,
-#    early_stopping_rounds=20,
-#    eval_metric="logloss",
-#    eval_set=eval_set,
-#    verbose=True,
-# )
