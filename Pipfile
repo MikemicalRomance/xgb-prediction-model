@@ -13,6 +13,7 @@ xgboost = "==1.4.2"
 seaborn = "*"
 graphviz = "*"
 treeplot = "*"
+pytest = "*"
 
 [dev-packages]
 
