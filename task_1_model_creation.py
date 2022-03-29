@@ -13,8 +13,8 @@ from variables import binary_columns, binary_positive_values, label_columns
 petfinder_df = get_dataset(
     "gs://cloud-samples-data/ai-platform-unified/datasets/tabular/petfinder-tabular-classification.csv"
 )
-## initial EDA; data looks pretty clean all 14 columns have 11,537 non null values, distribution of cat and dog is acceptable
-## TODO: clean data breed Tortoiseshell is not a breed Tortoiseshell,Tiger spelt toyger
+# initial EDA; data looks pretty clean all 14 columns have 11,537 non null values, distribution of cat and dog is acceptable
+#  Notes: Tortoiseshell is not a breed, Tiger shoudl be spelt Toyger
 
 # TASK 1.3 Feature engineering:
 # Numerical columns: Age, Fee, PhotoAmt.
@@ -23,10 +23,9 @@ petfinder_df = get_dataset(
 
 binary_encoded_df = binary_encode(petfinder_df, binary_columns, binary_positive_values)
 
-fully_encoded_df = label_encode(
-    binary_encoded_df, label_columns
-)
+fully_encoded_df = label_encode(binary_encoded_df, label_columns)
 
+# TASK 1.2 Train test split:
 X_train, y_train, X_test, y_test, X_valid, y_valid = train_test_valid_split(
     dataframe=fully_encoded_df,
     target_variable="Adopted",
@@ -62,5 +61,5 @@ model_performance(trained_model=trained_xgb_classifier, test_data=test_data)
 print("best iteration", trained_xgb_classifier.best_iteration)
 # Save model to artifacts dir
 trained_xgb_classifier.save_model("./artifacts/model/model.json")
-# optional plots
+# optional plot
 eval_metric_plot(trained_xgb_classifier.evals_result(), "logloss")
