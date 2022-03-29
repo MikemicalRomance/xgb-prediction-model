@@ -1,1 +1,1 @@
-from .encode_data import binary_encode, label_encode
+from .encode_data import binary_encode, binary_decode, label_encode
