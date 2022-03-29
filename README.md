@@ -1,43 +1,43 @@
-# xgb-prediction-model
-XGBoost prediction model in python.
-XGB-PREDICTION-MODEL
-├── artifacts    
-│         └── model    <- saved model
-├── output             <- output for resulting csv
-│   └── results.csv  
-│   
-├── utils              <- utils for processing data, building, training, and evaluating models
-│   ├── __init__.py    <- Makes src a Python module
-│   │
-│   ├── data           <- Scripts to fetch data
-│   │   └── get_data.py
-│   │
-│   ├── features       <- Scripts to encode features
-│   │   └── encode_data.py
-│   │
-│   ├── models         <- Scripts to train models and then use trained models to make predictions
-│   │   │                 
-│   │   ├── predict_model.py
-│   │   └── train_model.py
-│   │
-│   └── visualization  <- Scripts to create exploratory and results oriented visualizations
-│       └── visualize.py
-|
-├── variables  
-|   ├── __init__.py    <- Makes variables a Python module 
-│   └── variables.py   <- Script to store shared project variables, binary and label column names.
-|
-|── pipfile            <-  package requirements for application.
-|
-|── pipfile.lock       <- which specific version of packages should be used. Run: `pipenv install`.
-|
-├── README.md          <- The top-level README for developers using this project.
-│
-├── task_1_model_creation.py          <- script to train and save model.
-|
-├── task_2_model_output.py         <- script to load, make predictions and save results.
-|
-└── test_prediction.py            <- test script to check all required columns are present in results_df.
+# xgb-prediction-model <br />
+XGBoost prediction model in python. <br />
+XGB-PREDICTION-MODEL <br />
+├── artifacts    <br />
+│         └── model    <- saved model <br />
+├── output             <- output for resulting csv <br />
+│   └── results.csv  <br />
+│                     <br />
+├── utils              <- utils for processing data, building, training, and evaluating models  <br />
+│   ├── __init__.py    <- Makes src a Python module <br />
+│   │ <br />
+│   ├── data           <- Scripts to fetch data <br />
+│   │   └── get_data.py <br />
+│   │ <br />
+│   ├── features       <- Scripts to encode features  <br />
+│   │   └── encode_data.py  <br />
+│   │ <br />
+│   ├── models         <- Scripts to train models and then use trained models to make predictions <br />
+│   │   │                   <br />
+│   │   ├── predict_model.py  <br />
+│   │   └── train_model.py  <br />
+│   │ <br />
+│   └── visualization  <- Scripts to create exploratory and results oriented visualizations <br />
+│       └── visualize.py  <br />
+| <br />
+├── variables   <br />
+|   ├── __init__.py    <- Makes variables a Python module   <br />
+│   └── variables.py   <- Script to store shared project variables, binary and label column names.  <br />
+| <br />
+|── pipfile            <-  package requirements for application.  <br />
+| <br />
+|── pipfile.lock       <- which specific version of packages should be used. Run: `pipenv install`. <br />
+| <br />
+├── README.md          <- The top-level README for developers using this project. <br />
+│ <br />
+├── task_1_model_creation.py          <- script to train and save model.  <br />
+| <br />
+├── task_2_model_output.py         <- script to load, make predictions and save results.  <br />
+| <br />
+└── test_prediction.py            <- test script to check all required columns are present in results_df. <br />
 
 # ML Engineer Tech Test
 
