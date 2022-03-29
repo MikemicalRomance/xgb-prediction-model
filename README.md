@@ -1,5 +1,43 @@
 # xgb-prediction-model
-XGBoost prediction model in python
+XGBoost prediction model in python.
+XGB-PREDICTION-MODEL
+├── artifacts    
+│         └── model    <- saved model
+├── output             <- output for resulting csv
+│   └── results.csv  
+│   
+├── utils              <- utils for processing data, building, training, and evaluating models
+│   ├── __init__.py    <- Makes src a Python module
+│   │
+│   ├── data           <- Scripts to fetch data
+│   │   └── get_data.py
+│   │
+│   ├── features       <- Scripts to encode features
+│   │   └── encode_data.py
+│   │
+│   ├── models         <- Scripts to train models and then use trained models to make predictions
+│   │   │                 
+│   │   ├── predict_model.py
+│   │   └── train_model.py
+│   │
+│   └── visualization  <- Scripts to create exploratory and results oriented visualizations
+│       └── visualize.py
+|
+├── variables  
+|   ├── __init__.py    <- Makes variables a Python module 
+│   └── variables.py   <- Script to store shared project variables, binary and label column names.
+|
+|── pipfile            <-  package requirements for application.
+|
+|── pipfile.lock       <- which specific version of packages should be used. Run: `pipenv install`.
+|
+├── README.md          <- The top-level README for developers using this project.
+│
+├── task_1_model_creation.py          <- script to train and save model.
+|
+├── task_2_model_output.py         <- script to load, make predictions and save results.
+|
+└── test_prediction.py            <- test script to check all required columns are present in results_df.
 
 # ML Engineer Tech Test
 
