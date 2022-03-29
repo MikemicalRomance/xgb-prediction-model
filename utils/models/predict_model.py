@@ -1,6 +1,7 @@
 from sklearn.metrics import accuracy_score, f1_score, recall_score
 
-def model_performance(trained_model,test_data):
+# assess model performance in terms of accuracy,1 Score and recall
+def model_performance(trained_model, test_data):
     predictions = trained_model.predict(test_data["X_test"])
     accuracy = accuracy_score(test_data["y_test"], predictions)
     f_score = f1_score(test_data["y_test"], predictions)
@@ -10,7 +11,14 @@ def model_performance(trained_model,test_data):
     print("Recall:", recall)
     return accuracy, f1_score, recall_score
 
-def predict_function(trained_model,unencoded_data,encoded_data,target_variable:str,predicted_variable:str):
+# make predictions given trained model and data
+def predict_function(
+    trained_model,
+    unencoded_data,
+    encoded_data,
+    target_variable: str,
+    predicted_variable: str,
+):
     prediction_data = encoded_data.drop(columns=[target_variable]).copy()
     predictions = trained_model.predict(prediction_data)
     output_dataframe = unencoded_data.copy()
