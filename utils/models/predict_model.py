@@ -10,13 +10,9 @@ def model_performance(trained_model,test_data):
     print("Recall:", recall)
     return accuracy, f1_score, recall_score
 
-
-# print("predictions interation_range", xgb_cl.interation_range)
-#predictions = xgb_cl.predict(X_test)
-# TASK 1.5 log performance metrics F1 Score, Accuracy, Recall.
-#accuracy = accuracy_score(y_test, predictions)
-#f1_score = f1_score(y_test, predictions)
-#recall = recall_score(y_test, predictions)
-#print("Accuracy: %.2f%%" % (accuracy * 100.0))
-#print("F1 Score", f1_score)
-#print("Recall", recall)
+def predict_function(trained_model,unencoded_data,encoded_data,target_variable:str,predicted_variable:str):
+    prediction_data = encoded_data.drop(columns=[target_variable]).copy()
+    predictions = trained_model.predict(prediction_data)
+    output_dataframe = unencoded_data.copy()
+    output_dataframe[predicted_variable] = predictions
+    return output_dataframe
