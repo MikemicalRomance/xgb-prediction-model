@@ -39,22 +39,11 @@ XGBoost prediction model in python.
 | 
 └── test_prediction.py            <- test script to check all required columns are present in results_df. 
 ```
-# ML Engineer Tech Test
+# XGBoost prediction model
 
-This is a simple tech test asking you to write some Python program with a purpose to verify your learning capability and Python skills. 
-Please note that we do expect you to have sufficient Python skills but not on the specific tech stack required. The expectation
-is that if you don't know about something, learn how to use it by reading and trying to solve the problem. There are 
-plenty of tutorials and examples online, and you can Google as much as you like to complete the task. 
+Python program to predict adoption of pets based of historic data.
 
-Do get prepared on explaining what you have done, especially when third party code or tutorial code have been used.
-
-## Overall requirement
-1. Once the solution is finished, please store it in a public Git repository on GitHub (this is free to create) and share the link with us
-
-
-
-## Task 1
-Write a python script to:
+a python script to:
 1. Read the input from `gs://cloud-samples-data/ai-platform-unified/datasets/tabular/petfinder-tabular-classification.csv` and load it in a Pandas Dataframe.
 2. Split the dataset in 3 splits: train, validation, test with ratio of 60 (train) / 20 (validation) / 20 (test)
 3. Perform any feature engineering  you might find useful to enable training. It's not required that you create new features. 
@@ -64,7 +53,7 @@ Write a python script to:
 Save the model into `artifacts/model` and make sure the folder is <b>not</b> git ignored.
 
 
-## Task 2
+## Part 2
 Write a python script to:
 1. Load the data from `gs://cloud-samples-data/ai-platform-unified/datasets/tabular/petfinder-tabular-classification.csv`
 2. Uses the model you trained in the previous step to score all the rows in the CSV, excluding of course the header.
